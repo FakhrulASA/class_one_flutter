@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
+
 
 void main() {
   runApp(ClassOne());
@@ -66,10 +68,11 @@ class _ClassOneState extends State<ClassOne> {
                               width: 80,
                             )),
                         GestureDetector(
-                            onTap: () {
+                            onTap: () async {
                               if (a > 0) {
                                 a--;
                               }
+                              Fluttertoast.showToast(msg: "You pressed negative sign".toString(), backgroundColor: Colors.orange,fontSize: 20);
                               setState(() {});
                             },
                             child: Image.asset(
